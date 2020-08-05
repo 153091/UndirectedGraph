@@ -1,5 +1,25 @@
+/**
+ * %java Graph.java tinyG.txt
+ Note: Graph.java uses unchecked or unsafe operations.
+ Note: Recompile with -Xlint:unchecked for details.
+ 13 vertices, 13 edges
+ 0: 5 1 2 6
+ 1: 0
+ 2: 0
+ 3: 4 5
+ 4: 3 6 5
+ 5: 0 4 3
+ 6: 4 0
+ 7: 8
+ 8: 7
+ 9: 12 10 11
+ 10: 9
+ 11: 12 9
+ 12: 9 11
+ */
+
+
 import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.LinkedStack;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.NoSuchElementException;
