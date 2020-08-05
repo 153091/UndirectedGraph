@@ -1,7 +1,17 @@
+// через зеленую кнопку
+/**
+ * % G 0
+ * 0 to 0 :   0
+ * 0 to 1 :   0-5-3-2-1
+ * 0 to 2 :   0-5-3-2
+ * 0 to 3 :   0-5-3
+ * 0 to 4 :   0-5-3-2-4
+ * 0 to 5 :   0-5*/
+
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.Stack;
 
-import java.util.Stack;
 
 public class DepthFirstPaths {
     private boolean[] marked; // marked[v] = is there an s-v path?

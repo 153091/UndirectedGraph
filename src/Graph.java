@@ -22,15 +22,17 @@
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
+import java.util.ArrayDeque;
 import java.util.NoSuchElementException;
-import java.util.Stack;
+import java.util.Queue;
+
 
 public class Graph {
     private static final String NEWLINE = System.getProperty("line.separator");
 
     private final int V;
     private int E;
-    private Stack<Integer>[] adj;
+    private Queue<Integer>[] adj;
 
 
 
@@ -39,9 +41,9 @@ public class Graph {
         if (V < 0) throw new IllegalArgumentException("Number of vertices must be non-negative");
         this.V = V;
         this.E = 0;
-        adj = (Stack<Integer>[]) new Stack[V];
+        adj = (Queue<Integer>[]) new Queue[V];
         for (int v = 0; v < V; v++)
-            adj[v] = new Stack<>();
+            adj[v] = new ArrayDeque<Integer>();
     }
 
     /**try – определяет блок кода, в котором может произойти исключение;
@@ -53,9 +55,9 @@ public class Graph {
         try {
             this.V = in.readInt();
             if (V < 0) throw new IllegalArgumentException("number of vertices in a Graph must be nonnegative");
-            adj = (Stack<Integer>[]) new Stack[V];
+            adj = (Queue<Integer>[]) new Queue[V];
             for (int v = 0; v < V; v++)
-                adj[v] = new Stack<Integer>();
+                adj[v] = new ArrayDeque<Integer>();
 
             int E = in.readInt();
             if (E < 0) throw new IllegalArgumentException("Number of Edges must be non negative");
@@ -72,8 +74,8 @@ public class Graph {
 
     // add en edge v-w
     public void addEdge(int v, int w) {
-        adj[v].push(w);
-        adj[w].push(v);
+        adj[v].add(w);
+        adj[w].add(v);
         E++;
     }
 
