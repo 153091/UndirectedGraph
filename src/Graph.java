@@ -1,4 +1,5 @@
 import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.LinkedStack;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.NoSuchElementException;
@@ -32,8 +33,9 @@ public class Graph {
         try {
             this.V = in.readInt();
             if (V < 0) throw new IllegalArgumentException("number of vertices in a Graph must be nonnegative");
+            adj = (Stack<Integer>[]) new Stack[V];
             for (int v = 0; v < V; v++)
-                adj[v] = new Stack<>();
+                adj[v] = new Stack<Integer>();
 
             int E = in.readInt();
             if (E < 0) throw new IllegalArgumentException("Number of Edges must be non negative");
@@ -90,8 +92,8 @@ public class Graph {
 
 
     public static void main(String[] args) {
-	In in = new In(args[0]);
-	Graph G = new Graph(in);
+        In in = new In(args[0]);
+        Graph G = new Graph(in);
         StdOut.println(G);
     }
 }
